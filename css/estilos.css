@@ -1,0 +1,38 @@
+body {
+    position: relative;
+
+    nav {
+        width: 100%;
+        position: fixed;
+
+        ul.navigation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+
+    main {
+        padding: 25px 0 0 0;
+        display: flex;
+
+        img.start-image {
+            object-fit: contain;
+        }
+
+        section {
+            width: 65%;
+        }
+
+        aside {
+            max-width: calc(calc(100% - 65%) - 10px);
+        }
+    }
+}

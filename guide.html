@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos de Programación Web – Formularios y Tablas | Uniagustiniana</title>
+</head>
+
+<body>
+
+    <!-- ============================================================
+       ENCABEZADO DE LA INSTITUCIÓN
+  ============================================================ -->
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_Universitaria_Agustiniana.png/320px-Logo_Universitaria_Agustiniana.png"
+            alt="Logo Universitaria Agustiniana" width="200" />
+        <h1>Universitaria Agustiniana – Uniagustiniana</h1>
+        <h2>Fundamentos de Programación Web</h2>
+        <p><strong>Tema:</strong> Formularios, Tablas, Imágenes, Videos, Esquema Web y Menús en HTML</p>
+        <p><strong>Proyecto integrador:</strong> 🎵 La Rockola Digital</p>
+        <hr />
+    </header>
+
+    <!-- ============================================================
+       MENÚ DE NAVEGACIÓN PRINCIPAL
+  ============================================================ -->
+    <nav>
+        <h3>📚 Menú de Navegación</h3>
+        <ul>
+            <li><a href="#introduccion">1. Introducción y Esquema Web</a></li>
+            <li><a href="#imagenes">2. Imágenes en HTML</a></li>
+            <li><a href="#videos">3. Videos en HTML</a></li>
+            <li><a href="#tablas">4. Tablas HTML</a></li>
+            <li><a href="#formularios">5. Formularios HTML</a></li>
+            <li><a href="#menus">6. Menús de Navegación</a></li>
+            <li><a href="#proyecto">7. Proyecto: La Rockola Digital</a></li>
+        </ul>
+    </nav>
+
+    <hr />
+
+    <!-- ============================================================
+       SECCIÓN 1 – INTRODUCCIÓN Y ESQUEMA WEB
+  ============================================================ -->
+    <section id="introduccion">
+        <h2>1. Introducción y Esquema Web de una Página HTML</h2>
+
+        <p>
+            Una página web bien estructurada sigue el estándar <strong>HTML5</strong>. Su esquema
+            básico contiene etiquetas semánticas que le dan sentido a cada parte del documento.
+        </p>
+
+        <h3>📐 Esquema semántico de una página web</h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Etiquetas semánticas de HTML5</strong></caption>
+            <thead>
+                <tr>
+                    <th>Etiqueta</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo de uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;header&gt;</code></td>
+                    <td>Encabezado de la página o sección. Logo, título, slogan.</td>
+                    <td>Logo de la rockola, nombre del sitio</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;nav&gt;</code></td>
+                    <td>Menú de navegación con enlaces.</td>
+                    <td>Géneros musicales, inicio, contacto</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;main&gt;</code></td>
+                    <td>Contenido principal y único de la página.</td>
+                    <td>Catálogo de canciones, reproductor</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;section&gt;</code></td>
+                    <td>Agrupa contenido relacionado temáticamente.</td>
+                    <td>Sección de Rock, Sección de Salsa</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;article&gt;</code></td>
+                    <td>Contenido independiente y reutilizable.</td>
+                    <td>Tarjeta de una canción específica</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;aside&gt;</code></td>
+                    <td>Contenido secundario o complementario.</td>
+                    <td>Artistas más populares esta semana</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;footer&gt;</code></td>
+                    <td>Pie de página: créditos, contacto, redes.</td>
+                    <td>Derechos, contacto de la rockola</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>💡 Esquema visual de la estructura</h3>
+        <pre>
+┌──────────────────────────────────┐
+│           &lt;header&gt;               │  ← Logo + Título "RockolaWeb"
+├──────────────────────────────────┤
+│             &lt;nav&gt;                │  ← Menú: Inicio | Géneros | Pedir canción
+├──────────────┬───────────────────┤
+│              │                   │
+│   &lt;main&gt;    │    &lt;aside&gt;        │  ← Catálogo | Top canciones
+│  &lt;section&gt;  │                   │
+│  &lt;article&gt;  │                   │
+│              │                   │
+├──────────────┴───────────────────┤
+│           &lt;footer&gt;               │  ← Contacto | © 2025
+└──────────────────────────────────┘
+    </pre>
+
+        <blockquote>
+            <strong>📌 Dato clave:</strong> Las etiquetas semánticas NO cambian el aspecto visual
+            (eso lo hace CSS), pero sí mejoran la <em>accesibilidad</em>, el <em>SEO</em> y la
+            <em>mantenibilidad</em> del código.
+        </blockquote>
+    </section>
+
+    <hr />
+
+    <!-- ============================================================
+       SECCIÓN 2 – IMÁGENES
+  ============================================================ -->
+    <section id="imagenes">
+        <h2>2. Imágenes en HTML – <code>&lt;img&gt;</code></h2>
+
+        <p>La etiqueta <code>&lt;img&gt;</code> es una etiqueta <strong>vacía</strong> (no tiene
+            etiqueta de cierre). Sus atributos más importantes son:</p>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Atributos de la etiqueta &lt;img&gt;</strong></caption>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Obligatorio</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>src</code></td>
+                    <td>✅ Sí</td>
+                    <td>Ruta o URL de la imagen</td>
+                </tr>
+                <tr>
+                    <td><code>alt</code></td>
+                    <td>✅ Sí (accesibilidad)</td>
+                    <td>Texto alternativo si la imagen no carga</td>
+                </tr>
+                <tr>
+                    <td><code>width</code></td>
+                    <td>❌ No</td>
+                    <td>Ancho en píxeles</td>
+                </tr>
+                <tr>
+                    <td><code>height</code></td>
+                    <td>❌ No</td>
+                    <td>Alto en píxeles</td>
+                </tr>
+                <tr>
+                    <td><code>title</code></td>
+                    <td>❌ No</td>
+                    <td>Tooltip al pasar el mouse</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🎸 Ejemplo: Galería de géneros musicales de la Rockola</h3>
+
+        <p><strong>Código HTML:</strong></p>
+        <pre>
+&lt;img src="rock.jpg" alt="Género Rock" width="200" title="Rock Clásico" /&gt;
+&lt;img src="salsa.jpg" alt="Género Salsa" width="200" title="Salsa y Cumbia" /&gt;
+&lt;img src="pop.jpg"  alt="Género Pop"  width="200" title="Pop Internacional" /&gt;
+    </pre>
+
+        <p><strong>Resultado en el navegador:</strong></p>
+
+        <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/320px-Camponotus_flavomarginatus_ant.jpg"
+                alt="Placeholder – imagen de ejemplo" width="180" title="Aquí iría la portada del género Rock" />
+            <figcaption>🎸 Rock Clásico</figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG_transparency_demonstration_1.png/280px-PNG_transparency_demonstration_1.png"
+                alt="Placeholder – imagen de ejemplo" width="180" title="Aquí iría la portada del género Salsa" />
+            <figcaption>💃 Salsa y Cumbia</figcaption>
+        </figure>
+
+        <h3>📂 Rutas de imágenes</h3>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Tipo de ruta</th>
+                    <th>Ejemplo</th>
+                    <th>Cuándo usarla</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Relativa (misma carpeta)</td>
+                    <td><code>src="rockola.jpg"</code></td>
+                    <td>Imagen en la misma carpeta que el .html</td>
+                </tr>
+                <tr>
+                    <td>Relativa (subcarpeta)</td>
+                    <td><code>src="img/rockola.jpg"</code></td>
+                    <td>Imagen dentro de una carpeta "img/"</td>
+                </tr>
+                <tr>
+                    <td>Absoluta (URL)</td>
+                    <td><code>src="https://ejemplo.com/foto.jpg"</code></td>
+                    <td>Imagen alojada en internet</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr />
+
+    <!-- ============================================================
+       SECCIÓN 3 – VIDEOS
+  ============================================================ -->
+    <section id="videos">
+        <h2>3. Videos en HTML – <code>&lt;video&gt;</code> y YouTube</h2>
+
+        <p>HTML5 permite insertar videos de dos formas principales:</p>
+
+        <h3>🎬 Forma 1: Etiqueta <code>&lt;video&gt;</code> (archivo local o URL directa)</h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Atributos de la etiqueta &lt;video&gt;</strong></caption>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>src</code></td>
+                    <td>Ruta del archivo de video (.mp4, .webm, .ogg)</td>
+                </tr>
+                <tr>
+                    <td><code>controls</code></td>
+                    <td>Muestra los controles de reproducción (play, pausa, volumen)</td>
+                </tr>
+                <tr>
+                    <td><code>autoplay</code></td>
+                    <td>Reproduce automáticamente al cargar</td>
+                </tr>
+                <tr>
+                    <td><code>loop</code></td>
+                    <td>Repite el video en bucle</td>
+                </tr>
+                <tr>
+                    <td><code>muted</code></td>
+                    <td>Inicia sin sonido (necesario para autoplay en navegadores)</td>
+                </tr>
+                <tr>
+                    <td><code>width</code> / <code>height</code></td>
+                    <td>Dimensiones del reproductor</td>
+                </tr>
+                <tr>
+                    <td><code>poster</code></td>
+                    <td>Imagen de portada mientras el video no se reproduce</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Código de ejemplo:</strong></p>
+        <pre>
+&lt;video src="mi-cancion.mp4" controls width="480" poster="portada.jpg"&gt;
+  Tu navegador no soporta la etiqueta video.
+&lt;/video&gt;
+    </pre>
+
+        <h3>▶️ Forma 2: Insertar video de YouTube con <code>&lt;iframe&gt;</code></h3>
+        <p>
+            Para videos de YouTube, usamos la etiqueta <code>&lt;iframe&gt;</code> con la URL
+            de incrustación que YouTube nos provee:
+        </p>
+
+        <pre>
+&lt;iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/ID_DEL_VIDEO"
+  title="Nombre de la canción"
+  allowfullscreen&gt;
+&lt;/iframe&gt;
+    </pre>
+
+        <p><strong>🎵 Ejemplo en vivo – Video Musical (YouTube):</strong></p>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Canción de ejemplo en la Rockola" allowfullscreen>
+        </iframe>
+
+        <p><em>* Este video representa una canción del catálogo de nuestra Rockola Digital.</em></p>
+
+        <h3>🎵 Múltiples fuentes con <code>&lt;source&gt;</code></h3>
+        <pre>
+&lt;video controls width="480"&gt;
+  &lt;source src="cancion.mp4"  type="video/mp4" /&gt;
+  &lt;source src="cancion.webm" type="video/webm" /&gt;
+  Tu navegador no soporta HTML5 Video.
+&lt;/video&gt;
+    </pre>
+        <blockquote>
+            <strong>💡 Buena práctica:</strong> Siempre incluir texto alternativo dentro de
+            <code>&lt;video&gt;</code> para navegadores que no lo soporten.
+        </blockquote>
+    </section>
+
+    <hr />
+
+    <!-- ============================================================
+       SECCIÓN 4 – TABLAS
+  ============================================================ -->
+    <section id="tablas">
+        <h2>4. Tablas en HTML</h2>
+
+        <p>Las tablas organizan datos en filas y columnas. Son perfectas para mostrar
+            catálogos, horarios, estadísticas y listas estructuradas.</p>
+
+        <h3>🏗️ Estructura básica de una tabla</h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Etiquetas para construir tablas en HTML</strong></caption>
+            <thead>
+                <tr>
+                    <th>Etiqueta</th>
+                    <th>Función</th>
+                    <th>Obligatoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;table&gt;</code></td>
+                    <td>Contenedor principal de la tabla</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;caption&gt;</code></td>
+                    <td>Título descriptivo de la tabla</td>
+                    <td>❌ (recomendada)</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;thead&gt;</code></td>
+                    <td>Sección de encabezados</td>
+                    <td>❌ (recomendada)</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tbody&gt;</code></td>
+                    <td>Sección del cuerpo de datos</td>
+                    <td>❌ (recomendada)</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tfoot&gt;</code></td>
+                    <td>Sección del pie de la tabla (totales)</td>
+                    <td>❌</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;tr&gt;</code></td>
+                    <td>Fila de la tabla (Table Row)</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;th&gt;</code></td>
+                    <td>Celda de encabezado (negrita y centrada)</td>
+                    <td>✅ en thead</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;td&gt;</code></td>
+                    <td>Celda de dato (Table Data)</td>
+                    <td>✅ en tbody</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🔗 Atributos especiales: colspan y rowspan</h3>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>colspan="N"</code></td>
+                    <td>Fusiona N columnas horizontalmente</td>
+                    <td><code>&lt;td colspan="3"&gt;Total&lt;/td&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>rowspan="N"</code></td>
+                    <td>Fusiona N filas verticalmente</td>
+                    <td><code>&lt;td rowspan="2"&gt;Rock&lt;/td&gt;</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🎵 Ejemplo Aplicado: Catálogo de la Rockola Digital</h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>🎶 Catálogo de canciones – Rockola Digital Uniagustiniana</strong></caption>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Canción</th>
+                    <th>Artista</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>Duración</th>
+                    <th>Precio (COP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Bohemian Rhapsody</td>
+                    <td>Queen</td>
+                    <td>Rock</td>
+                    <td>1975</td>
+                    <td>5:55</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Hotel California</td>
+                    <td>Eagles</td>
+                    <td>Rock</td>
+                    <td>1977</td>
+                    <td>6:30</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>La Bicicleta</td>
+                    <td>Carlos Vives &amp; Shakira</td>
+                    <td>Vallenato Pop</td>
+                    <td>2016</td>
+                    <td>3:45</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Cali Pachanguero</td>
+                    <td>Grupo Niche</td>
+                    <td>Salsa</td>
+                    <td>1985</td>
+                    <td>4:20</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>Thriller</td>
+                    <td>Michael Jackson</td>
+                    <td>Pop / R&amp;B</td>
+                    <td>1982</td>
+                    <td>5:57</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>006</td>
+                    <td>Despacito</td>
+                    <td>Luis Fonsi ft. Daddy Yankee</td>
+                    <td>Reggaeton</td>
+                    <td>2017</td>
+                    <td>3:47</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>007</td>
+                    <td>Shape of You</td>
+                    <td>Ed Sheeran</td>
+                    <td>Pop</td>
+                    <td>2017</td>
+                    <td>3:53</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6"><strong>Total canciones disponibles</strong></td>
+                    <td><strong>7 canciones</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>📊 Tabla con colspan y rowspan – Géneros por Décadas</h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Géneros más populares en la Rockola por Décadas</strong></caption>
+            <thead>
+                <tr>
+                    <th rowspan="2">Género</th>
+                    <th colspan="4">Décadas</th>
+                </tr>
+                <tr>
+                    <th>80s</th>
+                    <th>90s</th>
+                    <th>2000s</th>
+                    <th>2010s</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rock</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐</td>
+                    <td>⭐</td>
+                </tr>
+                <tr>
+                    <td>Salsa / Cumbia</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Pop</td>
+                    <td>⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Reggaeton / Urbano</td>
+                    <td>–</td>
+                    <td>⭐</td>
+                    <td>⭐⭐</td>
+                    <td>⭐⭐⭐</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr />
+
+    <!-- ============================================================
+       SECCIÓN 5 – FORMULARIOS
+  ============================================================ -->
+    <section id="formularios">
+        <h2>5. Formularios en HTML</h2>
+
+        <p>Los formularios permiten al usuario <strong>ingresar datos</strong> que se envían
+            a un servidor. Son fundamentales en cualquier aplicación web.</p>
+
+        <h3>🏗️ Estructura del formulario</h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Atributos de la etiqueta &lt;form&gt;</strong></caption>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Valores comunes</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>action</code></td>
+                    <td><code>"procesar.php"</code>, <code>"#"</code></td>
+                    <td>URL a donde se envían los datos</td>
+                </tr>
+                <tr>
+                    <td><code>method</code></td>
+                    <td><code>"GET"</code>, <code>"POST"</code></td>
+                    <td>Método HTTP de envío</td>
+                </tr>
+                <tr>
+                    <td><code>enctype</code></td>
+                    <td><code>"multipart/form-data"</code></td>
+                    <td>Necesario para subir archivos</td>
+                </tr>
+                <tr>
+                    <td><code>name</code></td>
+                    <td>Cualquier texto</td>
+                    <td>Identificador del formulario</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🔤 Tipos de campos <code>&lt;input&gt;</code></h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Tipos de input más usados en HTML5</strong></caption>
+            <thead>
+                <tr>
+                    <th>type="…"</th>
+                    <th>Descripción</th>
+                    <th>Aplicación en la Rockola</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>text</code></td>
+                    <td>Campo de texto libre</td>
+                    <td>Nombre del cliente</td>
+                </tr>
+                <tr>
+                    <td><code>email</code></td>
+                    <td>Valida formato de correo</td>
+                    <td>Email para recibir lista de reproducción</td>
+                </tr>
+                <tr>
+                    <td><code>password</code></td>
+                    <td>Oculta los caracteres</td>
+                    <td>Clave de administrador</td>
+                </tr>
+                <tr>
+                    <td><code>number</code></td>
+                    <td>Solo números</td>
+                    <td>Cantidad de canciones a pedir</td>
+                </tr>
+                <tr>
+                    <td><code>tel</code></td>
+                    <td>Número telefónico</td>
+                    <td>Teléfono de contacto del local</td>
+                </tr>
+                <tr>
+                    <td><code>date</code></td>
+                    <td>Selector de fecha</td>
+                    <td>Fecha del evento musical</td>
+                </tr>
+                <tr>
+                    <td><code>time</code></td>
+                    <td>Selector de hora</td>
+                    <td>Hora de inicio del show</td>
+                </tr>
+                <tr>
+                    <td><code>range</code></td>
+                    <td>Control deslizante numérico</td>
+                    <td>Control de volumen</td>
+                </tr>
+                <tr>
+                    <td><code>color</code></td>
+                    <td>Selector de color</td>
+                    <td>Color de las luces de la rockola</td>
+                </tr>
+                <tr>
+                    <td><code>file</code></td>
+                    <td>Subir archivo</td>
+                    <td>Subir portada de álbum</td>
+                </tr>
+                <tr>
+                    <td><code>checkbox</code></td>
+                    <td>Casilla de verificación (múltiple)</td>
+                    <td>Géneros favoritos</td>
+                </tr>
+                <tr>
+                    <td><code>radio</code></td>
+                    <td>Botón de opción única</td>
+                    <td>Calificar la canción</td>
+                </tr>
+                <tr>
+                    <td><code>submit</code></td>
+                    <td>Botón de envío</td>
+                    <td>"Pedir canción"</td>
+                </tr>
+                <tr>
+                    <td><code>reset</code></td>
+                    <td>Limpia el formulario</td>
+                    <td>"Limpiar selección"</td>
+                </tr>
+                <tr>
+                    <td><code>hidden</code></td>
+                    <td>Campo oculto (no visible)</td>
+                    <td>ID del local / sesión</td>
+                </tr>
+                <tr>
+                    <td><code>search</code></td>
+                    <td>Campo de búsqueda</td>
+                    <td>Buscar canción por nombre</td>
+                </tr>
+                <tr>
+                    <td><code>url</code></td>
+                    <td>Valida formato de URL</td>
+                    <td>Link de YouTube de la canción</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🎵 Ejemplo Aplicado: Formulario "Pide tu Canción"</h3>
+
+        <fieldset>
+            <legend>🎶 Formulario de solicitud de canciones – Rockola Digital</legend>
+
+            <form action="#" method="POST" name="pedir-cancion">
+
+                <!-- Datos personales -->
+                <fieldset>
+                    <legend>👤 Datos del solicitante</legend>
+
+                    <p>
+                        <label for="nombre">Nombre completo: *</label><br />
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required
+                            maxlength="60" />
+                    </p>
+
+                    <p>
+                        <label for="email">Correo electrónico:</label><br />
+                        <input type="email" id="email" name="email" placeholder="juan@correo.com" />
+                    </p>
+
+                    <p>
+                        <label for="telefono">Teléfono / WhatsApp:</label><br />
+                        <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" />
+                    </p>
+
+                    <p>
+                        <label for="mesa">Número de mesa: *</label><br />
+                        <input type="number" id="mesa" name="mesa" min="1" max="50" placeholder="Ej: 5" required />
+                    </p>
+                </fieldset>
+
+                <br />
+
+                <!-- Solicitud musical -->
+                <fieldset>
+                    <legend>🎸 Solicitud musical</legend>
+
+                    <p>
+                        <label for="buscar">🔍 Buscar canción:</label><br />
+                        <input type="search" id="buscar" name="buscar"
+                            placeholder="Escribe el nombre de la canción o artista" size="40" />
+                    </p>
+
+                    <p>
+                        <label for="cancion">Nombre de la canción: *</label><br />
+                        <input type="text" id="cancion" name="cancion" placeholder="Ej: Bohemian Rhapsody" required />
+                    </p>
+
+                    <p>
+                        <label for="artista">Artista / Banda:</label><br />
+                        <input type="text" id="artista" name="artista" placeholder="Ej: Queen" />
+                    </p>
+
+                    <p>
+                        <label for="genero">Género musical:</label><br />
+                        <select id="genero" name="genero">
+                            <option value="">-- Seleccionar --</option>
+                            <optgroup label="Rock y Metal">
+                                <option value="rock_clasico">Rock Clásico</option>
+                                <option value="rock_alternativo">Rock Alternativo</option>
+                                <option value="metal">Heavy Metal</option>
+                            </optgroup>
+                            <optgroup label="Música Latina">
+                                <option value="salsa">Salsa</option>
+                                <option value="cumbia">Cumbia</option>
+                                <option value="vallenato">Vallenato</option>
+                                <option value="reggaeton">Reggaeton / Urbano</option>
+                            </optgroup>
+                            <optgroup label="Internacionales">
+                                <option value="pop">Pop</option>
+                                <option value="electronica">Electrónica</option>
+                                <option value="jazz">Jazz / Blues</option>
+                            </optgroup>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label>Géneros favoritos (puede marcar varios):</label><br />
+                        <input type="checkbox" id="ch_rock" name="favoritos" value="rock" />
+                        <label for="ch_rock">Rock</label>
+                        &nbsp;
+                        <input type="checkbox" id="ch_salsa" name="favoritos" value="salsa" />
+                        <label for="ch_salsa">Salsa</label>
+                        &nbsp;
+                        <input type="checkbox" id="ch_pop" name="favoritos" value="pop" />
+                        <label for="ch_pop">Pop</label>
+                        &nbsp;
+                        <input type="checkbox" id="ch_reggae" name="favoritos" value="reggaeton" />
+                        <label for="ch_reggae">Reggaeton</label>
+                        &nbsp;
+                        <input type="checkbox" id="ch_vallenato" name="favoritos" value="vallenato" />
+                        <label for="ch_vallenato">Vallenato</label>
+                    </p>
+
+                    <p>
+                        <label>¿Cómo deseas escuchar la canción?</label><br />
+                        <input type="radio" id="prioridad_normal" name="prioridad" value="normal" checked />
+                        <label for="prioridad_normal">Normal (en la fila)</label>
+                        &nbsp;
+                        <input type="radio" id="prioridad_urgente" name="prioridad" value="urgente" />
+                        <label for="prioridad_urgente">⚡ Prioritaria (+$1.000)</label>
+                        &nbsp;
+                        <input type="radio" id="prioridad_dedicar" name="prioridad" value="dedicar" />
+                        <label for="prioridad_dedicar">💌 Dedicarla a alguien</label>
+                    </p>
+
+                    <p>
+                        <label for="dedicatoria">Dedicatoria (opcional):</label><br />
+                        <textarea id="dedicatoria" name="dedicatoria" rows="3" cols="50"
+                            placeholder="Ej: Para Valentina, de parte de Juan ♥" maxlength="200"></textarea>
+                    </p>
+
+                    <p>
+                        <label for="url_youtube">URL de YouTube de la canción (si la conoces):</label><br />
+                        <input type="url" id="url_youtube" name="url_youtube"
+                            placeholder="https://www.youtube.com/watch?v=..." size="50" />
+                    </p>
+
+                    <p>
+                        <label for="portada">Subir imagen de portada del álbum (opcional):</label><br />
+                        <input type="file" id="portada" name="portada" accept="image/*" />
+                    </p>
+                </fieldset>
+
+                <br />
+
+                <!-- Configuración del ambiente -->
+                <fieldset>
+                    <legend>💡 Configuración del ambiente</legend>
+
+                    <p>
+                        <label for="volumen">🔊 Nivel de volumen: <output id="vol_output">50</output>%</label><br />
+                        <input type="range" id="volumen" name="volumen" min="0" max="100" value="50" />
+                    </p>
+
+                    <p>
+                        <label for="color_luces">🎨 Color de luces preferido:</label>
+                        <input type="color" id="color_luces" name="color_luces" value="#ff0066" />
+                    </p>
+
+                    <p>
+                        <label for="fecha_evento">📅 Fecha del evento:</label>
+                        <input type="date" id="fecha_evento" name="fecha_evento" />
+                    </p>
+
+                    <p>
+                        <label for="hora_inicio">⏰ Hora de inicio:</label>
+                        <input type="time" id="hora_inicio" name="hora_inicio" />
+                    </p>
+
+                    <p>
+                        <label for="comentarios">💬 Comentarios adicionales:</label><br />
+                        <textarea id="comentarios" name="comentarios" rows="4" cols="50"
+                            placeholder="Alguna petición especial para el DJ..."></textarea>
+                    </p>
+
+                    <!-- Campo oculto -->
+                    <input type="hidden" name="id_local" value="ROCKOLA_UNIAG_001" />
+                </fieldset>
+
+                <br />
+
+                <!-- Botones de envío -->
+                <p>
+                    <input type="submit" value="🎵 Pedir mi canción" />
+                    &nbsp;
+                    <input type="reset" value="🗑️ Limpiar formulario" />
+                </p>
+
+            </form>
+        </fieldset>
+
+        <h3>📋 Resumen de elementos de formulario</h3>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Elementos HTML de formulario</strong></caption>
+            <thead>
+                <tr>
+                    <th>Etiqueta</th>
+                    <th>Uso</th>
+                    <th>Cuándo usarla</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;input&gt;</code></td>
+                    <td>Campo de entrada (múltiples tipos)</td>
+                    <td>La mayoría de los campos</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;textarea&gt;</code></td>
+                    <td>Área de texto multilínea</td>
+                    <td>Comentarios, descripciones largas</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;select&gt;</code></td>
+                    <td>Lista desplegable</td>
+                    <td>Elegir entre opciones predefinidas</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;optgroup&gt;</code></td>
+                    <td>Agrupa opciones dentro de select</td>
+                    <td>Categorías dentro de un select</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;option&gt;</code></td>
+                    <td>Opción dentro de select</td>
+                    <td>Cada ítem del desplegable</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;label&gt;</code></td>
+                    <td>Etiqueta descriptiva de un campo</td>
+                    <td>Siempre, para accesibilidad</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;fieldset&gt;</code></td>
+                    <td>Agrupa campos relacionados</td>
+                    <td>Organizar secciones del form</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;legend&gt;</code></td>
+                    <td>Título del fieldset</td>
+                    <td>Dentro de cada fieldset</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;button&gt;</code></td>
+                    <td>Botón con contenido HTML</td>
+                    <td>Acciones del formulario</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;output&gt;</code></td>
+                    <td>Muestra resultado de un cálculo</td>
+                    <td>Mostrar valor de range, cálculos</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr />
+
+    <!-- ============================================================
+       SECCIÓN 6 – MENÚS DE NAVEGACIÓN
+  ============================================================ -->
+    <section id="menus">
+        <h2>6. Menús de Navegación en HTML</h2>
+
+        <p>Los menús se construyen con la etiqueta semántica <code>&lt;nav&gt;</code> combinada
+            con listas <code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> y enlaces
+            <code>&lt;a&gt;</code>.
+        </p>
+
+        <h3>📌 Tipos de menús</h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                    <th>Uso típico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Menú horizontal</td>
+                    <td>Ítems en una línea (con CSS se hace horizontal)</td>
+                    <td>Barra de navegación superior</td>
+                </tr>
+                <tr>
+                    <td>Menú vertical</td>
+                    <td>Ítems en columna (comportamiento por defecto de UL)</td>
+                    <td>Sidebar / menú lateral</td>
+                </tr>
+                <tr>
+                    <td>Menú desplegable</td>
+                    <td>Submenú que aparece al hacer hover</td>
+                    <td>Géneros con subgéneros</td>
+                </tr>
+                <tr>
+                    <td>Breadcrumb</td>
+                    <td>Muestra la ruta de navegación</td>
+                    <td>Inicio &gt; Géneros &gt; Rock</td>
+                </tr>
+                <tr>
+                    <td>Menú pie de página</td>
+                    <td>Dentro del footer</td>
+                    <td>Políticas, contacto, redes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>🎵 Ejemplo: Menú principal de la Rockola Digital</h3>
+
+        <p><strong>Código HTML:</strong></p>
+        <pre>
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;🏠 Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="catalogo.html"&gt;🎵 Catálogo&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="rock.html"&gt;🎸 Rock&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="salsa.html"&gt;💃 Salsa&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="pop.html"&gt;🎤 Pop&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href="pedir.html"&gt;📋 Pedir canción&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="ranking.html"&gt;🏆 Top 10&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contacto.html"&gt;📞 Contacto&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+    </pre>
+
+        <p><strong>Resultado (menú vertical con submenú anidado):</strong></p>
+
+        <nav>
+            <ul>
+                <li><a href="#">🏠 Inicio</a></li>
+                <li>
+                    <a href="#">🎵 Catálogo</a>
+                    <ul>
+                        <li><a href="#">🎸 Rock</a></li>
+                        <li><a href="#">💃 Salsa</a></li>
+                        <li><a href="#">🎤 Pop</a></li>
+                        <li><a href="#">🕺 Reggaeton</a></li>
+                        <li><a href="#">🪗 Vallenato</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">📋 Pedir canción</a></li>
+                <li><a href="#">🏆 Top 10 de la semana</a></li>
+                <li><a href="#">📞 Contacto</a></li>
+                <li><a href="#">👑 Administrador</a></li>
+            </ul>
+        </nav>
+
+        <h3>🍞 Ejemplo: Breadcrumb (Migas de pan)</h3>
+        <pre>
+&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/catalogo"&gt;Catálogo&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Rock Clásico&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+    </pre>
+
+        <nav aria-label="breadcrumb">
+            <ol>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Rock</a></li>
+                <li>Bohemian Rhapsody</li>
+            </ol>
+        </nav>
+    </section>
+
+    <hr />
+
+    <!-- ============================================================
+       SECCIÓN 7 – PROYECTO INTEGRADOR
+  ============================================================ -->
+    <section id="proyecto">
+        <h2>7. 🎸 Proyecto Integrador: La Rockola Digital</h2>
+
+        <p>Ponemos todos los temas juntos en la estructura de una página web real.</p>
+
+        <h3>📁 Estructura de archivos del proyecto</h3>
+        <pre>
+rockola-digital/
+│
+├── index.html          ← Página principal
+├── catalogo.html       ← Catálogo completo de canciones
+├── pedir.html          ← Formulario para pedir canción
+├── ranking.html        ← Top 10 canciones (tabla)
+├── contacto.html       ← Formulario de contacto
+│
+├── img/
+│   ├── logo-rockola.png
+│   ├── portada-rock.jpg
+│   ├── portada-salsa.jpg
+│   └── portada-pop.jpg
+│
+├── videos/
+│   └── promo-rockola.mp4
+│
+├── css/
+│   └── estilos.css     ← (lo agregaremos en la próxima clase 😉)
+│
+└── js/
+    └── app.js          ← (lo agregaremos después)
+    </pre>
+
+        <h3>🏆 Top 10 de la semana – Rockola Digital</h3>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>🏆 Las 10 canciones más pedidas esta semana</strong></caption>
+            <thead>
+                <tr>
+                    <th>Posición</th>
+                    <th>Canción</th>
+                    <th>Artista</th>
+                    <th>Género</th>
+                    <th>Veces pedida</th>
+                    <th>Tendencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🥇 1</td>
+                    <td>Cali Pachanguero</td>
+                    <td>Grupo Niche</td>
+                    <td>Salsa</td>
+                    <td>48</td>
+                    <td>⬆️ Sube</td>
+                </tr>
+                <tr>
+                    <td>🥈 2</td>
+                    <td>Bohemian Rhapsody</td>
+                    <td>Queen</td>
+                    <td>Rock</td>
+                    <td>41</td>
+                    <td>➡️ Estable</td>
+                </tr>
+                <tr>
+                    <td>🥉 3</td>
+                    <td>La Bicicleta</td>
+                    <td>Carlos Vives &amp; Shakira</td>
+                    <td>Vallenato Pop</td>
+                    <td>37</td>
+                    <td>⬆️ Sube</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Despacito</td>
+                    <td>Luis Fonsi ft. Daddy Yankee</td>
+                    <td>Reggaeton</td>
+                    <td>29</td>
+                    <td>⬇️ Baja</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Thriller</td>
+                    <td>Michael Jackson</td>
+                    <td>Pop / R&amp;B</td>
+                    <td>25</td>
+                    <td>➡️ Estable</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Hotel California</td>
+                    <td>Eagles</td>
+                    <td>Rock</td>
+                    <td>22</td>
+                    <td>⬆️ Sube</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Shape of You</td>
+                    <td>Ed Sheeran</td>
+                    <td>Pop</td>
+                    <td>20</td>
+                    <td>⬇️ Baja</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Mi Gente</td>
+                    <td>J Balvin</td>
+                    <td>Reggaeton</td>
+                    <td>18</td>
+                    <td>🆕 Nueva</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Vivir Mi Vida</td>
+                    <td>Marc Anthony</td>
+                    <td>Salsa</td>
+                    <td>16</td>
+                    <td>⬆️ Sube</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Stairway to Heaven</td>
+                    <td>Led Zeppelin</td>
+                    <td>Rock</td>
+                    <td>14</td>
+                    <td>🆕 Nueva</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>📬 Formulario de Contacto del Local</h3>
+
+        <fieldset>
+            <legend>📞 Contáctanos – Rockola Digital</legend>
+            <form action="#" method="POST" name="contacto">
+
+                <p>
+                    <label for="c_nombre">Nombre: *</label><br />
+                    <input type="text" id="c_nombre" name="nombre" required placeholder="Tu nombre" />
+                </p>
+
+                <p>
+                    <label for="c_email">Correo electrónico: *</label><br />
+                    <input type="email" id="c_email" name="email" required placeholder="correo@ejemplo.com" />
+                </p>
+
+                <p>
+                    <label for="c_asunto">Asunto:</label><br />
+                    <select id="c_asunto" name="asunto">
+                        <option value="">-- Seleccionar asunto --</option>
+                        <option value="reserva">Reservar el local</option>
+                        <option value="evento">Organizar un evento</option>
+                        <option value="queja">Queja o sugerencia</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="c_mensaje">Mensaje: *</label><br />
+                    <textarea id="c_mensaje" name="mensaje" rows="5" cols="50" required
+                        placeholder="Escribe tu mensaje aquí..."></textarea>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="c_acepto" name="acepto" required />
+                    <label for="c_acepto">Acepto la política de privacidad *</label>
+                </p>
+
+                <p>
+                    <input type="submit" value="📤 Enviar mensaje" />
+                    <input type="reset" value="🗑️ Limpiar" />
+                </p>
+
+            </form>
+        </fieldset>
+    </section>
+
+    <hr />
+
+    <!-- ============================================================
+       RESUMEN DE LA CLASE
+  ============================================================ -->
+    <section id="resumen">
+        <h2>📝 Resumen de la Clase</h2>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+            <caption><strong>Lo que aprendimos hoy</strong></caption>
+            <thead>
+                <tr>
+                    <th>Tema</th>
+                    <th>Etiquetas clave</th>
+                    <th>Aplicación en la Rockola</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Esquema Web</td>
+                    <td>header, nav, main, section, article, aside, footer</td>
+                    <td>Estructura completa del sitio</td>
+                </tr>
+                <tr>
+                    <td>Imágenes</td>
+                    <td>img, figure, figcaption</td>
+                    <td>Portadas de álbumes, géneros</td>
+                </tr>
+                <tr>
+                    <td>Videos</td>
+                    <td>video, source, iframe</td>
+                    <td>Videoclips, YouTube embeds</td>
+                </tr>
+                <tr>
+                    <td>Tablas</td>
+                    <td>table, thead, tbody, tfoot, tr, th, td, caption, colspan, rowspan</td>
+                    <td>Catálogo, Top 10, géneros por décadas</td>
+                </tr>
+                <tr>
+                    <td>Formularios</td>
+                    <td>form, input, select, textarea, label, fieldset, legend, button</td>
+                    <td>Pedir canción, contacto, configuración</td>
+                </tr>
+                <tr>
+                    <td>Menús</td>
+                    <td>nav, ul, ol, li, a</td>
+                    <td>Navegación principal, breadcrumb</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr />
+
+    <!-- ============================================================
+       PIE DE PÁGINA
+  ============================================================ -->
+    <footer>
+        <nav aria-label="Footer navigation">
+            <ul>
+                <li><a href="#">🏠 Inicio</a></li>
+                <li><a href="#">📜 Políticas de privacidad</a></li>
+                <li><a href="#">♿ Accesibilidad</a></li>
+                <li><a href="#">📞 Contacto</a></li>
+            </ul>
+        </nav>
+
+        <address>
+            <p>
+                <strong>Universitaria Agustiniana – Uniagustiniana</strong><br />
+                Cra. 7b Bis Nº 164 – 43, Bogotá D.C., Colombia<br />
+                📧 <a href="mailto:info@uniagustiniana.edu.co">info@uniagustiniana.edu.co</a><br />
+                📞 (601) 749 7777
+            </p>
+        </address>
+
+        <p>
+            <small>
+                &copy; 2025 Rockola Digital – Proyecto académico de Fundamentos de Programación Web.
+                Uniagustiniana. Todos los derechos reservados.
+            </small>
+        </p>
+    </footer>
+
+</body>
+
+</html>
